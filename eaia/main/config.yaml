@@ -1,0 +1,42 @@
+email: you@example.com
+full_name: Your Name
+name: YourName
+background: |
+  Brief background on the user and their business context. Keep this high-level and avoid sensitive details in repo defaults.
+timezone: "US/Eastern"
+
+# Controls whether the assistant stores examples/preferences in the configured LangGraph store.
+memory: true
+
+schedule_preferences: |
+  Default meeting length is 30 minutes unless the email suggests otherwise.
+  Prefer proposing 2-3 concrete windows in the user's timezone.
+
+background_preferences: |
+  If an email can be handled by an internal teammate, prefer looping them in rather than responding directly.
+  Do not invent emails, names, or internal links.
+
+response_preferences: |
+  Keep replies concise and practical.
+  Ask clarifying questions only when truly required.
+
+rewrite_preferences: |
+  Match the sender's tone (formal vs casual).
+  Do not mention that an assistant/automation is being used.
+  Avoid filler greetings/sign-offs unless the thread is formal.
+
+triage_no: |
+  - Obvious spam and automated vendor outreach
+  - Automated receipts/notifications (unless action is required)
+  - Calendar invites that do not require a response
+
+triage_notify: |
+  - Anything with a clear action item for the user
+  - Anything time-sensitive, legal/contract related, or billing/collections related
+  - Documents that require signature or review
+
+triage_email: |
+  - Direct questions that only the user can answer
+  - Investor/partner/client emails where a reply is expected
+  - Scheduling threads where proposing times or sending an invite is appropriate
+  - Warm intros that require starting a new thread
