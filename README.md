@@ -30,7 +30,7 @@ This repo is intended to be worked on like a real automation system: **tests, lo
 ### Environment
 
 1. Create and activate a virtualenv.
-2. Install dependencies:
+2. Install dependency:
 
 ```shell
 pip install -e .
