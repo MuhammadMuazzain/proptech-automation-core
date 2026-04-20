@@ -34,7 +34,7 @@ async def main(
             url=url
         )
 
-    log_kv(logger, "Fetching emails", email=email_address, minutes_since=minutes_since, url=url or "http://127.0.0.1:2024")
+    log_kv(logger, "Fetching emails and if gmails", email=email_address, minutes_since=minutes_since, url=url or "http://127.0.0.1:2024")
     
     email_count = 0
     async for email in fetch_group_emails(
