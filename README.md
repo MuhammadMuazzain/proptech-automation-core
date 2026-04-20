@@ -8,12 +8,12 @@ Executive AI Assistant (EAIA) is an **agentic AI automation** for email operatio
 - **Human-in-the-loop** approval/editing before sending
 - **Run continuously** via a scheduled ingest job (cron)
 
-This repo is intended to be worked on like a real production automation system: **tests, logging, error handling, and careful data/security practices**.
+This repo is intended to be worked on like a real automation system: **tests, logging, error handling, and careful data/security practices**.
 
 ## What this is (and isn’t)
 
 - **Not a generic chatbot**: it’s a workflow-driven automation with explicit routing and tool execution.
-- **Safe-by-default**: designed to run against **sanitized data** first and avoid exposing credentials.
+- **Safe-by-default**: designed to avoid exposing credentials and to minimize sensitive data handling.
 - **Built for iterative improvement**: supports learning/preferences via the LangGraph store.
 
 ## Table of contents
@@ -24,7 +24,6 @@ This repo is intended to be worked on like a real production automation system: 
 - [Ingesting emails](#ingesting-emails)
 - [Testing](#testing)
 - [Security & data handling](#security--data-handling)
-  - [Contractor-safe workflow](#contractor-safe-workflow)
 
 ## Quick start
 
@@ -122,14 +121,8 @@ pytest -q
 See `SECURITY.md` for guidance on:
 
 - handling sensitive operational data
-- sanitized/safe exports for contractor work
 - credential management and what should never be shared
-
-### Contractor-safe workflow
-
-- Start with **sanitized data** (exported emails with redaction) and a limited-scope task.
-- No shared personal logins; production credentials stay with the owner.
-- Prefer least-privilege API keys and revocable accounts as access expands.
+ - redaction and data minimization patterns for debugging and testing
 
 ## Advanced Options
 
